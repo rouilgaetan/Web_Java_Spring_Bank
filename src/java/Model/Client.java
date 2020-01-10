@@ -5,13 +5,43 @@
  */
 package Model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
  * @author Gaetan
  */
 public class Client extends User {
+    private String name;
+    private Date birth;
+    private String address;
     
-    Client(String login, String mdp){
+    private ArrayList<Accounts> accounts;
+    
+    Client(String login, String mdp, String name, String address, Date birth){
         super(login, mdp);
+        this.accounts=new ArrayList<>();
+        this.name=name;
+        this.birth= birth;
+        this.address= address;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Date getBirth() {
+        return birth;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public ArrayList<Accounts> getAccounts() {
+        return accounts;
+    }
+    
+    
 }
