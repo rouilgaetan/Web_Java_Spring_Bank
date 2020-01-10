@@ -6,7 +6,7 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -14,12 +14,12 @@ import java.util.Date;
  */
 public class Client extends User {
     private String name;
-    private Date birth;
+    private Calendar birth;
     private String address;
     
     private ArrayList<Accounts> accounts;
     
-    Client(String login, String mdp, String name, String address, Date birth){
+    Client(String login, String mdp, String name, String address, Calendar birth){
         super(login, mdp);
         this.accounts=new ArrayList<>();
         this.name=name;
@@ -31,7 +31,7 @@ public class Client extends User {
         return name;
     }
 
-    public Date getBirth() {
+    public Calendar getBirth() {
         return birth;
     }
 
