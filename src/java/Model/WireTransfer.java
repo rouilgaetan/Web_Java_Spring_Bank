@@ -5,14 +5,16 @@
  */
 package Model;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Gaetan
  */
 public class WireTransfer extends Operations{
-    private Accounts receiver;
-    WireTransfer(double amount, Accounts debit, Accounts receiver){
-        super(amount, debit);
-        this.receiver= receiver;
+    private final Accounts TO;
+    WireTransfer(double amount, Accounts debit, Calendar date, Accounts receiver){
+        super(amount, debit, date);
+        this.TO=receiver;
     }
 }
