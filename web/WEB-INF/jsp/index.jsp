@@ -5,11 +5,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
+        <title>Site de la Banque</title>
     </head>
 
     <body>
-        <p>Hello! This is the default welcome page for a Spring Web MVC project !</p>
-        <p></p>
+        <h1>Bienvenue dans votre banque</h1>
+        <FORM method="POST" ACTION="hello.htm">
+            Identifiant : <INPUT Type=text Name=nom>
+            Mot de passe : <input type="password" name=password>
+            <INPUT Type=submit VALUE="OK">
+        </FORM>
     </body>
 </html>
