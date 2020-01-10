@@ -5,16 +5,20 @@
  */
 package Model;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Gaetan
  */
 public class Operations {
-    private double amount;
-    private Accounts debit;
+    private final double AMOUNT;
+    private final Accounts FROM;
+    private final Calendar DATE;
     
-    Operations(double amount, Accounts debit){
-        this.amount=amount;
-        this.debit=debit;
+    Operations(double amount, Accounts debit, Calendar date){
+        this.AMOUNT=amount;
+        this.FROM=debit;
+        this.DATE=date;
     }
 }
