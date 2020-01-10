@@ -1,7 +1,7 @@
 <%-- 
     Document   : accueil
     Created on : 10 janv. 2020, 10:00:16
-    Author     : croux08
+    Author     : croux08, grouil
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,9 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Bienvenue sur votre compte !</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h2>${nom}</h2>
+        <h2>${password}</h2>
     </body>
 </html>
