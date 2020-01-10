@@ -10,5 +10,5 @@ package Model;
  * @author Gaetan
  */
 public class User {
-    
+    private int test;
 }
