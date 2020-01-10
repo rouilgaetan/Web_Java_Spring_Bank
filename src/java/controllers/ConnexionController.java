@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.portlet.mvc.AbstractController;
 import org.springframework.web.servlet.ModelAndView;
-import static sun.security.krb5.Confounder.bytes;
 
 /**
  *
@@ -28,7 +27,7 @@ public class ConnexionController extends AbstractController{
         return "index";
     }
     
-    @RequestMapping(value="hello", method=RequestMethod.POST)
+    @RequestMapping(value="accueil", method=RequestMethod.POST)
     public ModelAndView handleRequestInternal(
     HttpServletRequest request, HttpServletResponse response) throws Exception {
         ModelAndView mv = new ModelAndView("message");
