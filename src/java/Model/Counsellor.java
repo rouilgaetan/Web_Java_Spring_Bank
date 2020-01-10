@@ -5,13 +5,21 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Gaetan
  */
 public class Counsellor extends User{
     
+    private ArrayList<User> clients;
     Counsellor(String login, String mdp){
         super(login, mdp);
+        this.clients=new ArrayList<>();
     }
+    
+    
+    
+    
 }

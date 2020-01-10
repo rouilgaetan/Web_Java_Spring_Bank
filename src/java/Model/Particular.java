@@ -12,23 +12,29 @@ import java.util.Calendar;
  *
  * @author Gaetan
  */
-public class Client extends User {
-    private String name;
+public class Particular extends User {
+    private String first_name;
+    private String last_name;
     private Calendar birth;
     private String address;
     
     private ArrayList<Accounts> accounts;
     
-    Client(String login, String mdp, String name, String address, Calendar birth){
+    Particular(String login, String mdp, String first_name,String last_name, String address, Calendar birth){
         super(login, mdp);
         this.accounts=new ArrayList<>();
-        this.name=name;
+        this.first_name=first_name;
+        this.last_name=last_name;
         this.birth= birth;
         this.address= address;
     }
 
-    public String getName() {
-        return name;
+    public String getFirst_Name() {
+        return first_name;
+    }
+    
+    public String getLast_Name(){
+        return last_name;
     }
 
     public Calendar getBirth() {
