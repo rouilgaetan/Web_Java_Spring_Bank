@@ -10,9 +10,9 @@
 
     <body>
         <h1>Bienvenue dans votre banque</h1>
-        <FORM method="POST" ACTION="hello.htm">
+        <FORM method="POST" ACTION="accueil.htm">
             Identifiant : <INPUT Type=text Name=nom>
-            Mot de passe : <input type="password" name=password>
+            Mot de passe : <input type=password name=password>
             <INPUT Type=submit VALUE="OK">
         </FORM>
     </body>
