@@ -5,13 +5,15 @@
  */
 package Model;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Gaetan
  */
 public class Current extends Accounts{
     
-    Current(double credits, double account_id){
-        super(credits, account_id);
+    Current(double credits, double account_id, Calendar creation_date){
+        super(credits, account_id, creation_date);
     }
 }

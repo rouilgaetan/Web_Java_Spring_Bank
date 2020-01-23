@@ -5,14 +5,16 @@
  */
 package Model;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Gaetan
  */
 public class Saving extends Accounts{
-    
-    Saving(double credits, double account_id){
-        super(credits, account_id);
+    private float interest_rate;
+    Saving(double credits, double account_id, Calendar creation_date, float interest_rate){
+        super(credits, account_id, creation_date);
     }
         
 }

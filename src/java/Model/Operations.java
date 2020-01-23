@@ -21,4 +21,18 @@ public class Operations {
         this.FROM=debit;
         this.DATE=date;
     }
+
+    public double getAMOUNT() {
+        return AMOUNT;
+    }
+
+    public Accounts getFROM() {
+        return FROM;
+    }
+
+    public Calendar getDATE() {
+        return DATE;
+    }
+    
+    
 }

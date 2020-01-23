@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Gaetan
@@ -12,10 +14,12 @@ package Model;
 public class Accounts {
     private double credits;
     private double account_id;
+    private Calendar creation_date;
     
-    Accounts(double credits, double account_id){
+    Accounts(double credits, double account_id, Calendar creation_date){
         this.credits=credits;
         this.account_id=account_id;
+        this.creation_date=creation_date;
     }
 
     public double getCredits() {
