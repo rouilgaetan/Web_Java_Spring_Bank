@@ -18,11 +18,10 @@ public class Particular extends User {
     private Calendar birth;
     private String address;
     
-    private ArrayList<Accounts> accounts;
+    
     
     Particular(String login, String mdp, String first_name,String last_name, String address, Calendar birth){
         super(login, mdp);
-        this.accounts=new ArrayList<>();
         this.first_name=first_name;
         this.last_name=last_name;
         this.birth= birth;
@@ -43,10 +42,6 @@ public class Particular extends User {
 
     public String getAddress() {
         return address;
-    }
-
-    public ArrayList<Accounts> getAccounts() {
-        return accounts;
     }
     
     

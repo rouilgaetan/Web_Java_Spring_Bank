@@ -16,14 +16,12 @@ public class Professional extends User {
     private double siret;
     private String company_name;
     private String address;
-    private ArrayList<Accounts> accounts;
     
     Professional(String login, String mdp, String referent_name, double siret, String name, String address){
         super(login, mdp);
         this.referent_name=referent_name;
         this.siret=siret;
         this.company_name=name;
-        this.accounts=new ArrayList<>();
         this.address=address;
     }
 }
