@@ -15,6 +15,7 @@ public class Saving extends Accounts{
     private float interest_rate;
     Saving(double credits, double account_id, Calendar creation_date, float interest_rate){
         super(credits, account_id, creation_date);
+        this.interest_rate=interest_rate;
     }
         
 }
