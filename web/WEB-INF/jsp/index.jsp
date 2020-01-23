@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Site de la Banque</title>
+        <title>BanqueRoot</title>
     </head>
 
     <body>

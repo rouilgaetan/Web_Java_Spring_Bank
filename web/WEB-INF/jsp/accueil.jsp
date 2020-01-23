@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Bienvenue sur votre compte !</title>
+        <title>BanqueRoot</title>
     </head>
     <body>
+        <h1>Bienvenue sur votre compte : </h1>
         <h2>${nom}</h2>
-        <h2>${password}</h2>
     </body>
 </html>
