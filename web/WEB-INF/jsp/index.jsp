@@ -9,11 +9,24 @@
     </head>
 
     <body>
-        <h1>Bienvenue dans votre banque</h1>
+        <h1>Bienvenue sur BanqueRoot, la banque à la racine !</h1>
+        <h2>Connectez-vous</h2>
         <FORM method="POST" ACTION="accueil.htm">
             Identifiant : <INPUT Type=text Name=nom>
             Mot de passe : <input type=password name=password>
             <INPUT Type=submit VALUE="OK">
         </FORM>
+        <h2>Créer un compte</h2>
+        <input type="button" value ="Inscription" onclick="document.forms[0].action ='inscription.jsp'" />
+        <p id="demo" onclick="myFunction()">Click me to change my text color.</p>
+
+
+        
     </body>
 </html>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").style.color = "red";
+}
+</script>
