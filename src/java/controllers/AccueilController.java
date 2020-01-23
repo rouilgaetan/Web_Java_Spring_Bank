@@ -17,12 +17,10 @@ import org.springframework.web.servlet.mvc.AbstractController;
 
 @Controller
 public class AccueilController extends AbstractController {
-    
     @RequestMapping(value="index", method=RequestMethod.GET)
     public String init(){
         return "index";
     }
-    
     /**
      *
      * @param request
