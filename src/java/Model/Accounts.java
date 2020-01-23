@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -15,11 +16,13 @@ public class Accounts {
     private double credits;
     private double account_id;
     private Calendar creation_date;
+    private ArrayList<Operations> historique;
     
     Accounts(double credits, double account_id, Calendar creation_date){
         this.credits=credits;
         this.account_id=account_id;
         this.creation_date=creation_date;
+        this.historique= new ArrayList<Operations>();
     }
 
     public double getCredits() {
@@ -42,5 +45,13 @@ public class Accounts {
         String res;
         res=account_id+" : \n\t"+credits;
         return res;
-    }   
+    }
+    
+    public String displayHistoric(){
+        String res="";
+        for(int i=0; i<historique.size(); i++){
+            res+=historique.get(i).display();
+        }
+        return res;
+    }
 }

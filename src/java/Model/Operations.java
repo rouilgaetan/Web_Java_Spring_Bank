@@ -34,5 +34,9 @@ public class Operations {
         return DATE;
     }
     
-    
+    public String display(){
+        String res;
+        res=DATE+" : "+AMOUNT;
+        return res;
+    }   
 }
