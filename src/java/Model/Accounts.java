@@ -38,5 +38,9 @@ public class Accounts {
         this.account_id = account_id;
     }
     
-    
+    public String display(){
+        String res;
+        res=account_id+" : \n\t"+credits;
+        return res;
+    }   
 }
