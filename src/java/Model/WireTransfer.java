@@ -17,4 +17,9 @@ public class WireTransfer extends Operations{
         super(amount, debit, date);
         this.TO=receiver;
     }
+    
+    public void transfer(){
+        this.getFROM().setCredits(this.getFROM().getCredits()-this.getAMOUNT());
+        this.TO.setCredits(this.TO.getCredits()+this.getAMOUNT());
+    }
 }
