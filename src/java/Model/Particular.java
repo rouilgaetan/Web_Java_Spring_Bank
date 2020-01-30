@@ -21,7 +21,7 @@ public class Particular extends User {
     
     
     Particular(String login, String mdp, String first_name,String last_name, String address, Calendar birth){
-        super(login, mdp);
+        super(login, mdp, first_name, last_name);
         this.first_name=first_name;
         this.last_name=last_name;
         this.birth= birth;

@@ -17,8 +17,8 @@ public class Professional extends User {
     private String company_name;
     private String address;
     
-    Professional(String login, String mdp, String referent_name, double siret, String name, String address){
-        super(login, mdp);
+    Professional(String login, String mdp, String referent_name, double siret, String name, String address, String first_name, String last_name){
+        super(login, mdp, first_name, last_name);
         this.referent_name=referent_name;
         this.siret=siret;
         this.company_name=name;

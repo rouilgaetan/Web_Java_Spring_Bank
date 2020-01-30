@@ -12,11 +12,15 @@ import java.util.ArrayList;
  * @author Gaetan
  */
 public class User {
+    private String nom;
+    private String prenom;
     private String login;
     private String mdp;
     private ArrayList<Accounts> accounts;
     
-    User(String login, String mdp){
+    User(String login, String mdp, String nom, String prenom){
+        this.nom = nom;
+        this.prenom = prenom;
         this.login= login;
         this.mdp=mdp;
         this.accounts=new ArrayList<>();

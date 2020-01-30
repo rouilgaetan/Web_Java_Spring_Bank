@@ -16,8 +16,8 @@ public class Counselor extends User{
     
     private ArrayList<User> clients;
     
-    Counselor(String login, String mdp){
-        super(login, mdp);
+    Counselor(String login, String mdp, String first_name, String last_name){
+        super(login, mdp, first_name, last_name);
         this.clients=new ArrayList<>();
     }
     
@@ -26,8 +26,8 @@ public class Counselor extends User{
         
     }
     
-    public void createProfessional(String login, String mdp, String referent_name, double siret, String name, String address){
-        Professional professionnel = new Professional(login, mdp, referent_name, siret, name, address);
+    public void createProfessional(String login, String mdp, String referent_name, double siret, String name, String address, String first_name, String last_name){
+        Professional professionnel = new Professional(login, mdp, referent_name, siret, name, address, first_name, last_name);
     }
     
     public void createCurrent(User u, double credits, double account_id, Calendar creation_date){

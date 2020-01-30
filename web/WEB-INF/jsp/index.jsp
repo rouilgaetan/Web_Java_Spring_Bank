@@ -17,16 +17,14 @@
             <INPUT Type=submit VALUE="OK">
         </FORM>
         <h2>Créer un compte</h2>
-        <input type="button" value ="Inscription" onclick="document.forms[0].action ='inscription.jsp'" />
-        <p id="demo" onclick="myFunction()">Click me to change my text color.</p>
-
+        <input type="button" value ="Inscription" onclick="redirectInscription()" action="inscription.htm"/>
 
         
     </body>
 </html>
 
 <script>
-function myFunction() {
-  document.getElementById("demo").style.color = "red";
+function redirectInscription() {
+  window.location.href = "http://localhost:8080/ProjetAAW/inscription.htm";
 }
 </script>
