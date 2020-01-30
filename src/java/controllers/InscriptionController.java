@@ -5,8 +5,6 @@
  */
 package controllers;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
@@ -16,10 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
 @Controller
-public class AccueilController extends AbstractController {
-    @RequestMapping(value="index", method=RequestMethod.GET)
+public class InscriptionController extends AbstractController {
+    @RequestMapping(value="inscription", method=RequestMethod.GET)
     public String init(){
-        return "index";
+        return "inscription";
     }
     /**
      *
@@ -29,23 +27,10 @@ public class AccueilController extends AbstractController {
      * @throws Exception
      */
     @Override
-    @RequestMapping(value="accueil", method=RequestMethod.POST)
+    @RequestMapping(value="inscription", method=RequestMethod.POST)
     public ModelAndView handleRequestInternal(
     HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ModelAndView mv = new ModelAndView("accueil");
-        String nom = request.getParameter("nom");
-        String password = request.getParameter("password");
-        
-        //Cryptage mot de passe
-        MessageDigest crypt = MessageDigest.getInstance("SHA-1");
-        crypt.reset();
-        crypt.update(password.getBytes("UTF-8"));
-        String mdpcrypt =  new BigInteger(1, crypt.digest()).toString(16);
-        
-        
-        mv.addObject("nom",nom);
-        mv.addObject("password", mdpcrypt);
-        return mv;
+        return null;
     }
     
 }

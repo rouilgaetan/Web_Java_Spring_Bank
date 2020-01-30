@@ -1,0 +1,10 @@
+body {
+	background-color: #b7d1c4
+}
+
+label
+{
+	display: block;
+	width: 300px;
+	float: left;
+}
