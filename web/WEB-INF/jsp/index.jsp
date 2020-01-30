@@ -25,6 +25,6 @@
 
 <script>
 function redirectInscription() {
-  window.location.href = "http://localhost:8080/ProjetAAW/inscription.htm";
+  window.location.href = "inscription.htm";
 }
 </script>

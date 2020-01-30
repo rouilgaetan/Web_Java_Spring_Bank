@@ -5,10 +5,16 @@
  */
 package services;
 
+import modeles.Accounts;
+
 /**
  *
  * @author Gaetan
  */
 public interface UserService {
+    
+    public String getAccounts();
+    
+    public String getAccountOperations(Accounts a);
     
 }

@@ -47,4 +47,14 @@ public class Counselor extends User{
         }
         return res;
     }
+
+    public ArrayList<User> getClients() {
+        return clients;
+    }
+
+    public void setClients(ArrayList<User> clients) {
+        this.clients = clients;
+    }
+    
+    
 }
