@@ -33,7 +33,7 @@
                 <input type="radio" id="pro" name="type" value="pro">
                 <label for="pro">Professionnel</label>
             </div><br />
-            <div id="divPro" class="test">
+            <div id="divPro">
                 <p>Entreprise : </p><input type="text" id="entreprise" /><br />
                 <p>N° Siret : </p><input type="text" id="siret" maxlength="14"/><br />
             </div>
