@@ -11,7 +11,7 @@ import java.util.Calendar;
  *
  * @author Gaetan
  */
-public class Current extends Accounts{
+public class Current extends AccountsEntity{
     
     Current(double credits, double account_id, Calendar creation_date){
         super(credits, account_id, creation_date);

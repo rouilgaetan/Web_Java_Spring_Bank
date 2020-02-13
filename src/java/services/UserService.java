@@ -5,10 +5,17 @@
  */
 package services;
 
+import modeles.AccountsEntity;
+
+
 /**
  *
  * @author Gaetan
  */
 public interface UserService {
+    
+    public String getAccounts();
+    
+    public String getAccountOperations(AccountsEntity a);
     
 }

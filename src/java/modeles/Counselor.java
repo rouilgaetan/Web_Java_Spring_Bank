@@ -12,9 +12,9 @@ import java.util.Calendar;
  *
  * @author Gaetan
  */
-public class Counselor extends User{
+public class Counselor extends UserEntity{
     
-    private ArrayList<User> clients;
+    private ArrayList<UserEntity> clients;
     
     Counselor(String login, String mdp){
         super(login, mdp);
@@ -30,12 +30,12 @@ public class Counselor extends User{
         Professional professionnel = new Professional(login, mdp, referent_name, siret, name, address);
     }
     
-    public void createCurrent(User u, double credits, double account_id, Calendar creation_date){
+    public void createCurrent(UserEntity u, double credits, double account_id, Calendar creation_date){
         Current courant = new Current(credits, account_id, creation_date);
         u.addAccount(courant);
     }
     
-    public void createSaving(User u, double credits, double account_id, Calendar creation_date, float interest_rate){
+    public void createSaving(UserEntity u, double credits, double account_id, Calendar creation_date, float interest_rate){
         Saving epargne = new Saving(credits, account_id, creation_date, interest_rate);
         u.addAccount(epargne);
     }
@@ -47,4 +47,14 @@ public class Counselor extends User{
         }
         return res;
     }
+
+    public ArrayList<UserEntity> getClients() {
+        return clients;
+    }
+
+    public void setClients(ArrayList<UserEntity> clients) {
+        this.clients = clients;
+    }
+    
+    
 }
