@@ -5,7 +5,8 @@
  */
 package services;
 
-import modeles.Accounts;
+import modeles.AccountsEntity;
+
 
 /**
  *
@@ -15,6 +16,6 @@ public interface UserService {
     
     public String getAccounts();
     
-    public String getAccountOperations(Accounts a);
+    public String getAccountOperations(AccountsEntity a);
     
 }

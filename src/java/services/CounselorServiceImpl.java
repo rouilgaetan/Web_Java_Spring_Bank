@@ -7,7 +7,7 @@ package services;
 
 import java.util.Calendar;
 import modeles.Counselor;
-import modeles.User;
+import modeles.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,12 +32,12 @@ public class CounselorServiceImpl implements CounselorService{
     }
 
     @Override
-    public void addAccountsCurrent(User u, double credits, double account_id, Calendar creation_date) {
+    public void addAccountsCurrent(UserEntity u, double credits, double account_id, Calendar creation_date) {
         c.createCurrent(u, credits, account_id, creation_date);
     }
 
     @Override
-    public void addAccountsSaving(User u, double credits, double account_id, Calendar creation_date, float interest_rate) {
+    public void addAccountsSaving(UserEntity u, double credits, double account_id, Calendar creation_date, float interest_rate) {
         c.createSaving(u, credits, account_id, creation_date, interest_rate);
     }
 
@@ -47,7 +47,7 @@ public class CounselorServiceImpl implements CounselorService{
     }
 
     @Override
-    public String getUserAcounts(User u) {
+    public String getUserAcounts(UserEntity u) {
         if(c.getClients().contains(u)){
             return "Ce client existe";
         }

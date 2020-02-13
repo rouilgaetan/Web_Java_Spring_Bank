@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Gaetan
  */
-public class Professional extends User {
+public class Professional extends UserEntity {
     private String referent_name;
     private double siret;
     private String company_name;

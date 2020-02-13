@@ -12,7 +12,7 @@ import java.util.Calendar;
  *
  * @author Gaetan
  */
-public class Particular extends User {
+public class Particular extends UserEntity {
     private String first_name;
     private String last_name;
     private Calendar birth;
