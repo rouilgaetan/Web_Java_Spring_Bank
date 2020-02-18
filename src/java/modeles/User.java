@@ -5,54 +5,16 @@
  */
 package modeles;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Gaetan
  */
-public class User {
-    private String login;
-    private String mdp;
-    private ArrayList<Accounts> accounts;
-    
-    User(String login, String mdp){
-        this.login= login;
-        this.mdp=mdp;
-        this.accounts=new ArrayList<>();
-    }
-    
-    public void addAccount(Accounts compte){
-        this.accounts.add(compte);
-    }
-    
-    public String displayAccounts(){
-        String res="";
-        for(int i=0; i<accounts.size(); i++){
-            res+=accounts.get(i).display();
-        }
-        return res;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getMdp() {
-        return mdp;
-    }
-
-    public void setMdp(String mdp) {
-        this.mdp = mdp;
-    }
-    
-    public ArrayList<Accounts> getAccounts() {
-        return accounts;
-    }
-    
-    
+public interface User {
+    public void save(UserEntity a);
+    public void update(UserEntity a);
+    public void delete(UserEntity a);
+    public UserEntity find(String login);
+    public List<UserEntity> findAll();
 }

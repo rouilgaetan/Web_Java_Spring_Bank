@@ -40,3 +40,9 @@
         </div>
     </body>
 </html>
+
+<script>
+function redirectInscription() {
+  window.location.href = "inscription.htm";
+}
+</script>

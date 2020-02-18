@@ -12,26 +12,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/forminscr.css"/>
-        <script src="jquery.js"></script>
         <script type="text/javascript" src="${pageContext.request.contextPath}/js/formInscr.js"></script>
         <title>Inscription</title>
     </head>
     <body>
         <FORM method="POST" ACTION="inscrOK.htm">
-            <p>Nom : </p><input type="text" id="nom" /><br/>
-            <p>Prenom : </p><INPUT Type=text Name="prenom"><br/>
-            <p>Identifiant : </p><INPUT Type="text" Name="identifiant"><br/>
-            <p>Mot de passe : </p><input type="password" name="password" id="pass"><br/><br/>
+            <p>Nom : </p><input type="text" id="nom" name="nom"/><br/>
+            <p>Prenom : </p><input type=text id="prenom" name="prenom"><br/>
+            <p>Identifiant : </p><input type="text" id="identifiant" name="identifiant"><br/>
+            <p>Mot de passe : </p><input type="password" name="mdp" id="mdp"><br/>
+            <p>Date de naissance : <input type="date" id="ddNaissance" name="birthDate"/></p>
+            <p>Code Postal : </p><input type="text" id="codePostal" name="codePostal" maxlength="5"/><br />
+            <p>Ville : </p><input type="text" id="ville" name="ville"/><br />
+            <p>Adresse : <p><input type="text" id="adresse" name="adresse"/><br />
             <div>
-            <input type="radio" id="particulier" name="type" value="particulier" checked>
-            <label for="particulier">Particulier</label>
+                <input type="radio" id="particulier" name="type" value="particulier" checked>
+                <label for="particulier">Particulier</label>
             </div><br />
             <div>
-                <input type="radio" id="pro" name="type" value="pro" onclick="myfunct()">
+                <input type="radio" id="pro" name="type" value="pro">
                 <label for="pro">Professionnel</label>
             </div><br />
-            <div id="divPro" class="test">
-                <p>TEST !!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+            <div id="divPro">
+                <p>Entreprise : </p><input type="text" id="entreprise" /><br />
+                <p>N° Siret : </p><input type="text" id="siret" maxlength="14"/><br />
             </div>
             <INPUT Type="submit" VALUE="OK">
         </FORM>

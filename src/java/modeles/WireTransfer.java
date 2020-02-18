@@ -11,10 +11,10 @@ import java.util.Calendar;
  *
  * @author Gaetan
  */
-public class WireTransfer extends Operations{
-    private final Accounts TO;
-    WireTransfer(double amount, Accounts debit, Calendar date, Accounts receiver){
-        super(amount, debit, date);
+public class WireTransfer extends OperationsEntity{
+    private final AccountsEntity TO;
+    WireTransfer(double id, double amount, AccountsEntity debit, Calendar date, AccountsEntity receiver){
+        super(id, amount, debit, date);
         this.TO=receiver;
     }
     
