@@ -11,18 +11,25 @@
     </head>
 
     <body>
-        <center><h1>Bienvenue sur BanqueRoot, la banque à la racine !</h1></center>
+        <p>
+        <img src="${pageContext.request.contextPath}/images/logo.png" />
+        </p>
+        <center>
+            <h1>Bienvenue sur BanqueRoot, la banque à la racine !</h1>
+        </center><br />
         <div id="gauche">
             <div>
                 <h2>Se connecter en tant que client</h2>
-                <h3>Connectez-vous pour accéder à vos comptes</h3>
-                <FORM method="POST" ACTION="accueil.htm">
-                    <p>Identifiant : <INPUT Type=text Name=nom></p>
-                    <p>Mot de passe : <input type=password name=password></p>
-                    <INPUT Type=submit VALUE="OK">
-                </FORM>
-                <h2>Se connecter</h2>
-                <input type="button" value ="Inscription" onclick="redirectInscription()" action="inscription.htm"/>
+                <div id="client">
+                    <h3>Connectez-vous pour accéder à vos comptes</h3>
+                    <FORM method="POST" ACTION="accueil.htm">
+                        <p>Identifiant : <INPUT Type=text Name=nom></p>
+                        <p>Mot de passe : <input type=password name=password></p>
+                        <INPUT Type=submit VALUE="OK">
+                    </FORM>
+                    <h2>Se connecter</h2>
+                    <input type="button" value ="Inscription" onclick="redirectInscription()" action="inscription.htm"/>
+                </div>
             </div>
         </div>
         <div id="droite">
@@ -40,9 +47,3 @@
         </div>
     </body>
 </html>
-
-<script>
-function redirectInscription() {
-  window.location.href = "inscription.htm";
-}
-</script>

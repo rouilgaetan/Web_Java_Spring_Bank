@@ -2,17 +2,12 @@ body {
     background-color: #b7d1c4
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
 html, body {
     height: 100%;
 }
 
 #gauche {
-    width: 50%;
+    width: 40%;
     height: 100%;
     float: left;
 }
@@ -21,4 +16,10 @@ html, body {
     width: 50%;
     height: 100%;
     float: left;
+}
+
+img {
+    border-radius: 50%;
+    width: 5%;
+    position: absolute;
 }
