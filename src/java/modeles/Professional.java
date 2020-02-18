@@ -5,23 +5,16 @@
  */
 package modeles;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Gaetan
  */
-public class Professional extends UserEntity {
-    private String referent_name;
-    private double siret;
-    private String company_name;
-    private String address;
-    
-    Professional(String login, String mdp, String referent_name, double siret, String name, String address){
-        super(login, mdp);
-        this.referent_name=referent_name;
-        this.siret=siret;
-        this.company_name=name;
-        this.address=address;
-    }
+public interface Professional {
+    public void save(ProfessionalEntity a);
+    public void update(ProfessionalEntity a);
+    public void delete(ProfessionalEntity a);
+    public ProfessionalEntity find(String login);
+    public List<ProfessionalEntity> findAll();
 }

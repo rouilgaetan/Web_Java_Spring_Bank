@@ -5,56 +5,16 @@
  */
 package modeles;
 
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.List;
 
 /**
  *
  * @author Gaetan
  */
-public class Counselor extends UserEntity{
-    
-    private ArrayList<UserEntity> clients;
-    
-    Counselor(String login, String mdp){
-        super(login, mdp);
-        this.clients=new ArrayList<>();
-    }
-    
-    public void createParticular(String login, String mdp, String first_name,String last_name, String address, Calendar birth){
-        Particular particulier = new Particular(login, mdp, first_name, last_name, address, birth);
-        
-    }
-    
-    public void createProfessional(String login, String mdp, String referent_name, double siret, String name, String address){
-        Professional professionnel = new Professional(login, mdp, referent_name, siret, name, address);
-    }
-    
-    public void createCurrent(UserEntity u, double credits, double account_id, Calendar creation_date){
-        Current courant = new Current(credits, account_id, creation_date);
-        u.addAccount(courant);
-    }
-    
-    public void createSaving(UserEntity u, double credits, double account_id, Calendar creation_date, float interest_rate){
-        Saving epargne = new Saving(credits, account_id, creation_date, interest_rate);
-        u.addAccount(epargne);
-    }
-    
-    public String getUsersAccounts(){
-        String res="";
-        for(int i=0; i<clients.size(); i++){
-            res+=clients.get(i).displayAccounts();
-        }
-        return res;
-    }
-
-    public ArrayList<UserEntity> getClients() {
-        return clients;
-    }
-
-    public void setClients(ArrayList<UserEntity> clients) {
-        this.clients = clients;
-    }
-    
-    
+public interface Counselor {
+    public void save(CounselorEntity a);
+    public void update(CounselorEntity a);
+    public void delete(CounselorEntity a);
+    public UserEntity find(String login);
+    public List<CounselorEntity> findAll();
 }

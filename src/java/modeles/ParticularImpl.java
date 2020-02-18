@@ -5,20 +5,20 @@
  */
 package modeles;
 
-
 import java.util.List;
-import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author Gaetan
  */
 @Repository
-public class AccountsImpl implements Accounts {
-   private EntityManager em;
+public class ParticularImpl implements Particular{
+
+    private EntityManager em;
 
     public EntityManager getEm() {
         return em;
@@ -29,7 +29,7 @@ public class AccountsImpl implements Accounts {
     
     @Transactional
     @Override
-    public void save(AccountsEntity a)
+    public void save(ParticularEntity a)
     {
        a = em.merge(a);
        em.persist(a);
@@ -38,14 +38,14 @@ public class AccountsImpl implements Accounts {
     
     @Transactional
     @Override
-    public void update(AccountsEntity a)
+    public void update(ParticularEntity a)
     {
        em.merge(a);
     }
     
     @Transactional
     @Override
-    public void delete(AccountsEntity a)
+    public void delete(ParticularEntity a)
     {
        a = em.merge(a);
        em.remove(a);
@@ -54,16 +54,17 @@ public class AccountsImpl implements Accounts {
     
     @Transactional(readOnly=true)
     @Override
-    public AccountsEntity find(double account_id)
+    public ParticularEntity find(String login)
     {
-        return em.find(AccountsEntity.class, account_id);
+        return em.find(ParticularEntity.class, login);
     }
     
     @Transactional(readOnly=true)
     @Override
-    public List<AccountsEntity> findAll()
+    public List<ParticularEntity> findAll()
     {
-        Query q = em.createQuery("SELECT a FROM AccountsEntity");
+        Query q = em.createQuery("SELECT a FROM UserEntity");
         return q.getResultList();
     }
+    
 }

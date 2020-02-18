@@ -7,34 +7,58 @@ package modeles;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import javax.persistence.*;
 
 /**
  *
  * @author Gaetan
  */
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn(name="operationstype",discriminatorType
+=DiscriminatorType.STRING)
+@DiscriminatorValue("Operations")
 public class OperationsEntity implements Serializable {
+
+    @Id
     private double id;
-    private final double AMOUNT;
-    private final AccountsEntity FROM;
-    private final Calendar DATE;
     
-    OperationsEntity(double id, double amount, AccountsEntity debit, Calendar date){
+    @Column
+    private final double AMOUNT;
+    
+    @Column
+    @ManyToOne
+    private final AccountsEntity DEBITED;
+    
+    @Column
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Calendar date_of;
+    
+    public OperationsEntity(){
+        this.id=0;
+        this.AMOUNT=0;
+        this.date_of.set(1, 1, 2001); 
+        this.DEBITED=new AccountsEntity();
+    }
+    
+    
+    public OperationsEntity(double id, double amount, AccountsEntity debit, Calendar date){
         this.id=id;
         this.AMOUNT=amount;
-        this.FROM=debit;
-        this.DATE=date;
+        this.DEBITED=debit;
+        this.date_of=date;
     }
 
     public double getAMOUNT() {
         return AMOUNT;
     }
 
-    public AccountsEntity getFROM() {
-        return FROM;
+    public AccountsEntity getDEBITED() {
+        return DEBITED;
     }
 
     public Calendar getDATE() {
-        return DATE;
+        return date_of;
     }
 
     public double getId() {
@@ -49,7 +73,8 @@ public class OperationsEntity implements Serializable {
     
     public String display(){
         String res;
-        res=DATE+" : "+AMOUNT;
+        res=date_of+" : "+AMOUNT;
         return res;
-    }   
+    } 
+    
 }

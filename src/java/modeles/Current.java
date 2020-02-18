@@ -5,15 +5,16 @@
  */
 package modeles;
 
-import java.util.Calendar;
+import java.util.List;
 
 /**
  *
  * @author Gaetan
  */
-public class Current extends AccountsEntity{
-    
-    Current(double credits, double account_id, Calendar creation_date){
-        super(credits, account_id, creation_date);
-    }
+public interface Current {
+    public void save(CurrentEntity a);
+    public void update(CurrentEntity a);
+    public void delete(CurrentEntity a);
+    public CurrentEntity find(double account_id);
+    public List<CurrentEntity> findAll();
 }

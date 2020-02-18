@@ -6,7 +6,7 @@
 package services;
 
 import java.util.Calendar;
-import modeles.Counselor;
+import modeles.CounselorEntity;
 import modeles.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 public class CounselorServiceImpl implements CounselorService{
 
     @Autowired
-    Counselor c;
+    CounselorEntity c;
     
     @Override
     public void addParticular(String login, String mdp, String first_name, String last_name, String address, Calendar birth) {

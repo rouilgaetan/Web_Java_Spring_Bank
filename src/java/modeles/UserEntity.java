@@ -13,7 +13,13 @@ import javax.persistence.*;
  *
  * @author Gaetan
  */
-public class UserEntity implements Serializable{
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn(name="usertype",discriminatorType
+=DiscriminatorType.STRING)
+@DiscriminatorValue("User")
+public class UserEntity implements Serializable {
+
     @Id
     private String login;
     
@@ -23,7 +29,12 @@ public class UserEntity implements Serializable{
     @OneToMany(mappedBy="user")
     private ArrayList<AccountsEntity> accounts;
     
-    UserEntity(String login, String mdp){
+    public UserEntity(){
+        this.login="User";
+        this.mdp = "Password";
+    }
+    
+    public UserEntity(String login, String mdp){
         this.login= login;
         this.mdp=mdp;
         this.accounts=new ArrayList<>();
