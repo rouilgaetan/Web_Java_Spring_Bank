@@ -22,13 +22,11 @@
                 <h2>Se connecter en tant que client</h2>
                 <div id="client">
                     <h3>Connectez-vous pour accéder à vos comptes</h3>
-                    <FORM method="POST" ACTION="accueil.htm">
+                    <FORM method="POST" ACTION="clientPage.htm">
                         <p>Identifiant : <INPUT Type=text Name=nom></p>
                         <p>Mot de passe : <input type=password name=password></p>
                         <INPUT Type=submit VALUE="OK">
                     </FORM>
-                    <h2>Se connecter</h2>
-                    <input type="button" value ="Inscription" onclick="redirectInscription()" action="inscription.htm"/>
                 </div>
             </div>
         </div>
@@ -36,13 +34,11 @@
             <h2>Se connecter en tant que conseiller</h2>
             <div id="conseiller">
                 <h3>Connectez-vous en tant que conseiller</h3>
-                <FORM method="POST" ACTION="accueil.htm">
-                    Identifiant : <INPUT Type=text Name=nom>
-                    Mot de passe : <input type=password name=password>
+                <FORM method="POST" ACTION="counsellorPage.htm">
+                    <p>Identifiant : <INPUT Type=text Name=nom></p>
+                    <p>Mot de passe : <input type=password name=password></p>
                     <INPUT Type=submit VALUE="OK">
                 </FORM>
-            <h2>Se connecter</h2>
-            <input type="button" value ="Inscription" onclick="redirectInscription()" action="inscription.htm"/>
             </div>
         </div>
     </body>
