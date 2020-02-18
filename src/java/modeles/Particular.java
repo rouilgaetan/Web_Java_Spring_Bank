@@ -5,44 +5,16 @@
  */
 package modeles;
 
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.List;
 
 /**
  *
  * @author Gaetan
  */
-public class Particular extends UserEntity {
-    private String first_name;
-    private String last_name;
-    private Calendar birth;
-    private String address;
-    
-    
-    
-    Particular(String login, String mdp, String first_name,String last_name, String address, Calendar birth){
-        super(login, mdp);
-        this.first_name=first_name;
-        this.last_name=last_name;
-        this.birth= birth;
-        this.address= address;
-    }
-
-    public String getFirst_Name() {
-        return first_name;
-    }
-    
-    public String getLast_Name(){
-        return last_name;
-    }
-
-    public Calendar getBirth() {
-        return birth;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-    
-    
+public interface Particular {
+    public void save(ParticularEntity a);
+    public void update(ParticularEntity a);
+    public void delete(ParticularEntity a);
+    public ParticularEntity find(String login);
+    public List<ParticularEntity> findAll();
 }

@@ -14,7 +14,13 @@ import javax.persistence.*;
  *
  * @author Gaetan
  */
-public class AccountsEntity implements Serializable{
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn(name="accountstype",discriminatorType
+=DiscriminatorType.STRING)
+@DiscriminatorValue("Accounts")
+public class AccountsEntity implements Serializable {
+
     @Id
     private double account_id;
     
@@ -22,6 +28,7 @@ public class AccountsEntity implements Serializable{
     private double credits;
     
     @Column
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Calendar creation_date;
     
     @OneToMany
@@ -31,11 +38,20 @@ public class AccountsEntity implements Serializable{
     @JoinColumn(name="user")
     private User user;
     
-    AccountsEntity(double credits, double account_id, Calendar creation_date){
+    
+    public AccountsEntity(){
+        this.credits=0;
+        this.account_id=0;
+        this.creation_date.set(1, 1, 2001);
+        this.historique= new ArrayList<>();
+    }
+    
+    
+    public AccountsEntity(double credits, double account_id, Calendar creation_date){
         this.credits=credits;
         this.account_id=account_id;
         this.creation_date=creation_date;
-        this.historique= new ArrayList<OperationsEntity>();
+        this.historique= new ArrayList<>();
     }
 
     public double getCredits() {
@@ -101,4 +117,5 @@ public class AccountsEntity implements Serializable{
     public String toString() {
         return "Account :"+account_id;
     }
+    
 }

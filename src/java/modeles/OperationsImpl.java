@@ -8,12 +8,14 @@ package modeles;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author Gaetan
  */
+@Repository
 public class OperationsImpl implements Operations{
     private EntityManager em;
 
