@@ -31,12 +31,12 @@ public class AccountsEntity implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Calendar creation_date;
     
+    @JoinColumn
     @OneToMany
     private ArrayList<OperationsEntity> historique;
     
-    @ManyToOne
     @JoinColumn(name="user")
-    private User user;
+    private UserEntity user;
     
     
     public AccountsEntity(){
@@ -70,16 +70,14 @@ public class AccountsEntity implements Serializable {
         this.account_id = account_id;
     }
 
-    public User getUser() {
+    public UserEntity getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserEntity user) {
         this.user = user;
     }
-    
-    
-    
+
     
     public String display(){
         String res;
