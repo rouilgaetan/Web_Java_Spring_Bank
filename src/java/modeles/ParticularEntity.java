@@ -24,12 +24,15 @@ public class ParticularEntity extends UserEntity {
     private String last_name;
     
     @Column
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Calendar birth;
     
     @Column
     private String address;
     
-    
+    public ParticularEntity(){
+        super();
+    }
     
     public ParticularEntity(String login, String mdp, String first_name,String last_name, String address, Calendar birth){
         super(login, mdp);

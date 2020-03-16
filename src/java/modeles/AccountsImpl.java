@@ -9,6 +9,7 @@ package modeles;
 import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
@@ -18,6 +19,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class AccountsImpl implements Accounts {
+    
+    @PersistenceContext(unitName="BankRootJPAPU")
    private EntityManager em;
 
     public EntityManager getEm() {

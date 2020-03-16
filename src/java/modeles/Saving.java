@@ -5,17 +5,16 @@
  */
 package modeles;
 
-import java.util.Calendar;
+import java.util.List;
 
 /**
  *
  * @author Gaetan
  */
-public class Saving extends AccountsEntity{
-    private float interest_rate;
-    Saving(double credits, double account_id, Calendar creation_date, float interest_rate){
-        super(credits, account_id, creation_date);
-        this.interest_rate=interest_rate;
-    }
-        
+public interface Saving {
+    public void save(SavingEntity a);
+    public void update(SavingEntity a);
+    public void delete(SavingEntity a);
+    public SavingEntity find(double account_id);
+    public List<SavingEntity> findAll();
 }

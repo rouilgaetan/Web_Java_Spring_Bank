@@ -7,6 +7,7 @@ package modeles;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public class ParticularImpl implements Particular{
 
+    @PersistenceContext(unitName="BankRootJPAPU")
     private EntityManager em;
 
     public EntityManager getEm() {

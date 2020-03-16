@@ -5,6 +5,7 @@
  */
 package modeles;
 
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,8 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Gaetan
  */
 @Repository
-public class OperationsImpl implements Operations{
-    
+public class SavingImpl implements Saving{
+
     @PersistenceContext(unitName="BankRootJPAPU")
     private EntityManager em;
 
@@ -31,7 +32,7 @@ public class OperationsImpl implements Operations{
     
     @Transactional
     @Override
-    public void save(OperationsEntity a)
+    public void save(SavingEntity a)
     {
        a = em.merge(a);
        em.persist(a);
@@ -40,14 +41,14 @@ public class OperationsImpl implements Operations{
     
     @Transactional
     @Override
-    public void update(OperationsEntity a)
+    public void update(SavingEntity a)
     {
        em.merge(a);
     }
     
     @Transactional
     @Override
-    public void delete(OperationsEntity a)
+    public void delete(SavingEntity a)
     {
        a = em.merge(a);
        em.remove(a);
@@ -56,16 +57,19 @@ public class OperationsImpl implements Operations{
     
     @Transactional(readOnly=true)
     @Override
-    public OperationsEntity find(double id)
+    public SavingEntity find(double account_id)
     {
-        return em.find(OperationsEntity.class, id);
+        return em.find(SavingEntity.class, account_id);
     }
     
     @Transactional(readOnly=true)
     @Override
-    public List<OperationsEntity> findAll()
+    public List<SavingEntity> findAll()
     {
         Query q = em.createQuery("SELECT a FROM AccountsEntity");
         return q.getResultList();
     }
+    
+    
+        
 }

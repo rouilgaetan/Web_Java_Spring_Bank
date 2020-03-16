@@ -5,17 +5,37 @@
  */
 package modeles;
 
-import java.util.ArrayList;
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author Gaetan
  */
+@Entity
+@DiscriminatorValue("Professional")
 public class ProfessionalEntity extends UserEntity {
+    
+    @Column
     private String referent_name;
+    
+    @Column
     private double siret;
+    
+    @Column
     private String company_name;
+    
+    @Column
     private String address;
+    
+    ProfessionalEntity(){
+        super();
+    }
     
     ProfessionalEntity(String login, String mdp, String referent_name, double siret, String name, String address){
         super(login, mdp);
@@ -24,4 +44,5 @@ public class ProfessionalEntity extends UserEntity {
         this.company_name=name;
         this.address=address;
     }
+    
 }

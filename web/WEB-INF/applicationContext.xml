@@ -25,16 +25,18 @@
     </bean>
     
     <bean id="entityManagerFactory"
-        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
+
         <property name="persistenceUnitName" value="BankRootJPAPU"/>
+
         <property name="dataSource" ref="BankRootDataSource"/>
         <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="databasePlatform"
-                value="org.hibernate.dialect.DerbyDialect"/>
-                <property name="showSql" value="true"/>
-                <property name="generateDdl" value="true"/>
-            </bean>
+            <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">                <!--<property name="databasePlatform"                value="org.hibernate.dialect.DerbyDialect"/>                <property name="showSql" value="true"/>                <property name="generateDdl" value="true"/>-->            </bean>
+        </property>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="eclipselink.weaving" value="false"/>
+            </map>
         </property>
     </bean>
     

@@ -18,8 +18,7 @@ import javax.persistence.*;
 public class CounselorEntity extends UserEntity {
 
     
-    @Column
-    @OneToMany
+    @JoinColumn
     private ArrayList<UserEntity> clients;
     
     public CounselorEntity(){
@@ -46,7 +45,7 @@ public class CounselorEntity extends UserEntity {
     }
     
     public void createSaving(UserEntity u, double credits, double account_id, Calendar creation_date, float interest_rate){
-        SavingEntity1 epargne = new SavingEntity1(credits, account_id, creation_date, interest_rate);
+        SavingEntity epargne = new SavingEntity(credits, account_id, creation_date, interest_rate);
         u.addAccount(epargne);
     }
     

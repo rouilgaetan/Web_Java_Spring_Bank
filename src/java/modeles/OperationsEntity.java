@@ -26,8 +26,7 @@ public class OperationsEntity implements Serializable {
     @Column
     private final double AMOUNT;
     
-    @Column
-    @ManyToOne
+    @JoinColumn
     private final AccountsEntity DEBITED;
     
     @Column

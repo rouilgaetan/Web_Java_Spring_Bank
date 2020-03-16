@@ -5,6 +5,7 @@
  */
 package modeles;
 
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Gaetan
  */
 @Repository
-public class OperationsImpl implements Operations{
+public class ProfessionalImpl implements Professional {
     
     @PersistenceContext(unitName="BankRootJPAPU")
     private EntityManager em;
@@ -31,7 +32,7 @@ public class OperationsImpl implements Operations{
     
     @Transactional
     @Override
-    public void save(OperationsEntity a)
+    public void save(ProfessionalEntity a)
     {
        a = em.merge(a);
        em.persist(a);
@@ -40,14 +41,14 @@ public class OperationsImpl implements Operations{
     
     @Transactional
     @Override
-    public void update(OperationsEntity a)
+    public void update(ProfessionalEntity a)
     {
        em.merge(a);
     }
     
     @Transactional
     @Override
-    public void delete(OperationsEntity a)
+    public void delete(ProfessionalEntity a)
     {
        a = em.merge(a);
        em.remove(a);
@@ -56,16 +57,16 @@ public class OperationsImpl implements Operations{
     
     @Transactional(readOnly=true)
     @Override
-    public OperationsEntity find(double id)
+    public ProfessionalEntity find(String login)
     {
-        return em.find(OperationsEntity.class, id);
+        return em.find(ProfessionalEntity.class, login);
     }
     
     @Transactional(readOnly=true)
     @Override
-    public List<OperationsEntity> findAll()
+    public List<ProfessionalEntity> findAll()
     {
-        Query q = em.createQuery("SELECT a FROM AccountsEntity");
+        Query q = em.createQuery("SELECT a FROM UserEntity");
         return q.getResultList();
     }
 }
