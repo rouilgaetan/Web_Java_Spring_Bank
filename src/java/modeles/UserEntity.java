@@ -26,7 +26,7 @@ public class UserEntity implements Serializable {
     @Column
     private String mdp;
     
-    @OneToMany(mappedBy="user")
+    @JoinColumn
     private ArrayList<AccountsEntity> accounts;
     
     public UserEntity(){
