@@ -19,7 +19,7 @@ public class WireTransferEntity1 extends OperationsEntity{
     }
     
     public void transfer(){
-        this.getDEBITED().setCredits(this.getDEBITED().getCredits()-this.getAMOUNT());
-        this.TO.setCredits(this.TO.getCredits()+this.getAMOUNT());
+        this.getDebited().setCredits(this.getDebited().getCredits()-this.getAmount());
+        this.TO.setCredits(this.TO.getCredits()+this.getAmount());
     }
 }

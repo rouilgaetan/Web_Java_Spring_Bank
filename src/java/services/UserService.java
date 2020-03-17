@@ -5,7 +5,9 @@
  */
 package services;
 
+import java.util.List;
 import modeles.AccountsEntity;
+import modeles.UserEntity;
 
 
 /**
@@ -14,8 +16,10 @@ import modeles.AccountsEntity;
  */
 public interface UserService {
     
-    public String getAccounts();
-    
-    public String getAccountOperations(AccountsEntity a);
+    public UserEntity find(String id);
+    public List<UserEntity> findAll();
+    public void save(UserEntity u);
+    public void update(UserEntity entity);
+    public void delete(UserEntity entity);
     
 }

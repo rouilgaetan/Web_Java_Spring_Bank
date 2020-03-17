@@ -7,6 +7,7 @@ package modeles;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -19,24 +20,33 @@ import javax.persistence.*;
 =DiscriminatorType.STRING)
 @DiscriminatorValue("User")
 public class UserEntity implements Serializable {
-
+    
+    private static final long serialVersionUID = 1L;
+    
     @Id
     private String login;
     
     @Column
     private String mdp;
     
-    @JoinColumn
-    private ArrayList<AccountsEntity> accounts;
+    @OneToMany(mappedBy="user")
+    private List<AccountsEntity> accounts;
+    
+    @ManyToOne
+    @JoinColumn(name="counselor_fk")
+    private CounselorEntity counselor;
     
     public UserEntity(){
         this.login="User";
         this.mdp = "Password";
+        this.counselor = new CounselorEntity();
+        this.accounts=new ArrayList<>();
     }
     
-    public UserEntity(String login, String mdp){
+    public UserEntity(String login, String mdp, CounselorEntity counselor){
         this.login= login;
         this.mdp=mdp;
+        this.counselor= counselor;
         this.accounts=new ArrayList<>();
     }
     
@@ -68,7 +78,7 @@ public class UserEntity implements Serializable {
         this.mdp = mdp;
     }
     
-    public ArrayList<AccountsEntity> getAccounts() {
+    public List<AccountsEntity> getAccounts() {
         return accounts;
     }
     

@@ -8,6 +8,7 @@ package modeles;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -21,6 +22,8 @@ import javax.persistence.*;
 @DiscriminatorValue("Accounts")
 public class AccountsEntity implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @Id
     private double account_id;
     
@@ -31,19 +34,16 @@ public class AccountsEntity implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Calendar creation_date;
     
-    @JoinColumn
-    @OneToMany
-    private ArrayList<OperationsEntity> historique;
+    @OneToMany(mappedBy="debited")
+    private List<OperationsEntity> historique;
     
-    @JoinColumn(name="user")
+    @ManyToOne
+    @JoinColumn(name="user_fk")
     private UserEntity user;
     
     
     public AccountsEntity(){
-        this.credits=0;
-        this.account_id=0;
-        this.creation_date.set(1, 1, 2001);
-        this.historique= new ArrayList<>();
+        
     }
     
     

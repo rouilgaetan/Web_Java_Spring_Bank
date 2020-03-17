@@ -5,8 +5,10 @@
  */
 package modeles;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -15,28 +17,34 @@ import javax.persistence.*;
  */
 @Entity
 @DiscriminatorValue("Counselor")
-public class CounselorEntity extends UserEntity {
-
+public class CounselorEntity implements Serializable {
     
-    @JoinColumn
-    private ArrayList<UserEntity> clients;
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    private String name;
+
+    @OneToMany(mappedBy="counselor")
+    private List<UserEntity> clients;
+    
     
     public CounselorEntity(){
-        super();
+        this.name="toto";
+        this.clients=new ArrayList<>();
     }
     
-    public CounselorEntity(String login, String mdp){
-        super(login, mdp);
+    public CounselorEntity(String name){
+        this.name= name;
         this.clients=new ArrayList<>();
     }
     
     public void createParticular(String login, String mdp, String first_name,String last_name, String address, Calendar birth){
-        ParticularEntity particulier = new ParticularEntity(login, mdp, first_name, last_name, address, birth);
+        ParticularEntity particulier = new ParticularEntity(login, mdp, first_name, last_name, address, birth, this);
         
     }
     
     public void createProfessional(String login, String mdp, String referent_name, double siret, String name, String address){
-        ProfessionalEntity professionnel = new ProfessionalEntity(login, mdp, referent_name, siret, name, address);
+        ProfessionalEntity professionnel = new ProfessionalEntity(login, mdp, referent_name, siret, name, address, this);
     }
     
     public void createCurrent(UserEntity u, double credits, double account_id, Calendar creation_date){
@@ -57,7 +65,7 @@ public class CounselorEntity extends UserEntity {
         return res;
     }
 
-    public ArrayList<UserEntity> getClients() {
+    public List<UserEntity> getClients() {
         return clients;
     }
 

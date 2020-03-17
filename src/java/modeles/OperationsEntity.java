@@ -20,40 +20,40 @@ import javax.persistence.*;
 @DiscriminatorValue("Operations")
 public class OperationsEntity implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @Id
     private double id;
     
     @Column
-    private final double AMOUNT;
+    private double amount;
     
-    @JoinColumn
-    private final AccountsEntity DEBITED;
+    @ManyToOne
+    @JoinColumn(name="accounts_fk")
+    private AccountsEntity debited;
     
     @Column
     @Temporal(javax.persistence.TemporalType.DATE)
     private Calendar date_of;
     
     public OperationsEntity(){
-        this.id=0;
-        this.AMOUNT=0;
-        this.date_of.set(1, 1, 2001); 
-        this.DEBITED=new AccountsEntity();
+
     }
     
     
     public OperationsEntity(double id, double amount, AccountsEntity debit, Calendar date){
         this.id=id;
-        this.AMOUNT=amount;
-        this.DEBITED=debit;
+        this.amount=amount;
+        this.debited=debit;
         this.date_of=date;
     }
 
-    public double getAMOUNT() {
-        return AMOUNT;
+    public double getAmount() {
+        return amount;
     }
 
-    public AccountsEntity getDEBITED() {
-        return DEBITED;
+    public AccountsEntity getDebited() {
+        return debited;
     }
 
     public Calendar getDATE() {
@@ -72,7 +72,7 @@ public class OperationsEntity implements Serializable {
     
     public String display(){
         String res;
-        res=date_of+" : "+AMOUNT;
+        res=date_of+" : "+amount;
         return res;
     } 
     

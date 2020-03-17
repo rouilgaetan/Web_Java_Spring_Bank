@@ -5,22 +5,17 @@
  */
 package services;
 
-import java.util.Calendar;
-import modeles.UserEntity;
+import java.util.List;
+import modeles.CounselorEntity;
 
 /**
  *
  * @author Gaetan
  */
 public interface CounselorService {
-    public void addParticular(String login, String mdp, String first_name, String last_name, String address, Calendar birth);
-    public void addProfessional(String login, String mdp, String referent_name, double siret, String name, String address);
-    
-    public void addAccountsCurrent(UserEntity u, double credits, double account_id, Calendar creation_date);
-    public void addAccountsSaving(UserEntity u, double credits, double account_id, Calendar creation_date, float interest_rate);
-    
-    
-    public String getUsersAccounts();
-    
-    public String getUserAcounts(UserEntity u);
+    public CounselorEntity find(String id);
+    public List<CounselorEntity> findAll();
+    public void save(CounselorEntity u);
+    public void update(CounselorEntity entity);
+    public void delete(CounselorEntity entity);
 }

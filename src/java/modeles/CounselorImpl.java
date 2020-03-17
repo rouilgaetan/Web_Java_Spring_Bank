@@ -56,9 +56,9 @@ public class CounselorImpl implements Counselor{
     
     @Transactional(readOnly=true)
     @Override
-    public UserEntity find(String login)
+    public CounselorEntity find(String name)
     {
-        return em.find(CounselorEntity.class, login);
+        return em.find(CounselorEntity.class, name);
     }
     
     @Transactional(readOnly=true)

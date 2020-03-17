@@ -34,8 +34,8 @@ public class ParticularEntity extends UserEntity {
         super();
     }
     
-    public ParticularEntity(String login, String mdp, String first_name,String last_name, String address, Calendar birth){
-        super(login, mdp);
+    public ParticularEntity(String login, String mdp, String first_name,String last_name, String address, Calendar birth, CounselorEntity counselor){
+        super(login, mdp, counselor);
         this.first_name=first_name;
         this.last_name=last_name;
         this.birth= birth;

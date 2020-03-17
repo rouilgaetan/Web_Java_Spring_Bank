@@ -18,11 +18,11 @@ import javax.persistence.*;
 @DiscriminatorValue("Current")
 public class CurrentEntity extends AccountsEntity{
     
-    CurrentEntity(){
+    public CurrentEntity(){
         super();
     }
     
-    CurrentEntity(double credits, double account_id, Calendar creation_date){
+    public CurrentEntity(double credits, double account_id, Calendar creation_date){
         super(credits, account_id, creation_date);
     }
 }

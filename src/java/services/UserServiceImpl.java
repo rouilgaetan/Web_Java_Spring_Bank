@@ -5,7 +5,9 @@
  */
 package services;
 
+import java.util.List;
 import modeles.AccountsEntity;
+import modeles.User;
 import modeles.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,17 +20,31 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    UserEntity u;
-    
-    
+    User u;
+
     @Override
-    public String getAccounts() {
-        return u.displayAccounts();
+    public UserEntity find(String id) {
+        return u.find(id);
     }
 
     @Override
-    public String getAccountOperations(AccountsEntity a) {
-        return a.displayHistoric();
+    public List<UserEntity> findAll() {
+        return u.findAll();
     }
-    
+
+    @Override
+    public void save(UserEntity u) {
+        this.u.save(u);
+    }
+
+    @Override
+    public void update(UserEntity entity) {
+        this.u.update(entity);
+    }
+
+    @Override
+    public void delete(UserEntity entity) {
+        this.u.delete(entity);
+    }
+   
 }

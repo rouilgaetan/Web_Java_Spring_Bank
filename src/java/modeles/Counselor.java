@@ -15,6 +15,6 @@ public interface Counselor {
     public void save(CounselorEntity a);
     public void update(CounselorEntity a);
     public void delete(CounselorEntity a);
-    public UserEntity find(String login);
+    public CounselorEntity find(String name);
     public List<CounselorEntity> findAll();
 }

@@ -37,8 +37,8 @@ public class ProfessionalEntity extends UserEntity {
         super();
     }
     
-    ProfessionalEntity(String login, String mdp, String referent_name, double siret, String name, String address){
-        super(login, mdp);
+    ProfessionalEntity(String login, String mdp, String referent_name, double siret, String name, String address, CounselorEntity counselor){
+        super(login, mdp, counselor);
         this.referent_name=referent_name;
         this.siret=siret;
         this.company_name=name;
