@@ -6,7 +6,6 @@
 package services;
 
 import java.util.List;
-import modeles.AccountsEntity;
 import modeles.User;
 import modeles.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;

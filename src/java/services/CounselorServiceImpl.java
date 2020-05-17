@@ -5,12 +5,9 @@
  */
 package services;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import modeles.Counselor;
 import modeles.CounselorEntity;
-import modeles.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
