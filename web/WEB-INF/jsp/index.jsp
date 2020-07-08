@@ -5,11 +5,41 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css"/>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/redirectForm.js"></script>
+        <title>BanqueRoot</title>
     </head>
 
     <body>
-        <p>Hello! This is the default welcome page for a Spring Web MVC project !</p>
-        <p></p>
+        <p>
+        <img src="${pageContext.request.contextPath}/images/logo.png" />
+        </p>
+        <center>
+            <h1>Bienvenue sur BanqueRoot, la banque à la racine !</h1>
+        </center><br />
+        <div id="gauche">
+            <div>
+                <h2>Se connecter en tant que client</h2>
+                <div id="client">
+                    <h3>Connectez-vous pour accéder à vos comptes</h3>
+                    <FORM method="POST" ACTION="clientPage.htm">
+                        <p>Identifiant : <INPUT Type=text Name=nom></p>
+                        <p>Mot de passe : <input type=password name=password></p>
+                        <INPUT Type=submit VALUE="OK">
+                    </FORM>
+                </div>
+            </div>
+        </div>
+        <div id="droite">
+            <h2>Se connecter en tant que conseiller</h2>
+            <div id="conseiller">
+                <h3>Connectez-vous en tant que conseiller</h3>
+                <FORM method="POST" ACTION="counsellorPage.htm">
+                    <p>Identifiant : <INPUT Type=text Name=nom></p>
+                    <p>Mot de passe : <input type=password name=password></p>
+                    <INPUT Type=submit VALUE="OK">
+                </FORM>
+            </div>
+        </div>
     </body>
 </html>
